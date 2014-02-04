@@ -1,4 +1,17 @@
 ESTAS SON LAS COSAS QUE HAY QUE HACER
 NO TE HAGAS WEY, FABIAN
 
+DONE -Descomponer todas las tareas en pequenas tareas
 -Listas doblemente ligadas
+	-Crear archivo doubleLinkedList.h
+	-Estructura Node
+	-Estructura List
+	-Metodo List* createList()
+	-Metodo Node* createNode(int val)
+	-Metodo void addNode(List *list, int val)
+	-Metodo void deleteList(List *list)
+	-Hacer puebas en main.c
+		-Prueba de creaeList
+		-Prueba de createNode
+		-Prueba de addNode
+		-Prueba de deleteList
