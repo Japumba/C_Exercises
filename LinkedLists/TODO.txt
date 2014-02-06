@@ -1,17 +1,19 @@
 ESTAS SON LAS COSAS QUE HAY QUE HACER
 NO TE HAGAS WEY, FABIAN
+No vuelvo a repetir esto de dejar al último. Lo prometo
 
 DONE -Descomponer todas las tareas en pequenas tareas
 -Listas doblemente ligadas
-	-Crear archivo doubleLinkedList.h
-	-Estructura Node
-	-Estructura List
-	-Metodo List* createList()
-	-Metodo Node* createNode(int val)
-	-Metodo void addNode(List *list, int val)
-	-Metodo void deleteList(List *list)
-	-Hacer puebas en main.c
-		-Prueba de creaeList
-		-Prueba de createNode
-		-Prueba de addNode
+	-Crear archivo doubleLinkedList.h			Modificado de single para doble
+	-Estructura Node							Modificado de single para doble
+	-Estructura List							Modificado de single para doble
+	-Metodo List* createList()					Modificado de single para doble
+	-Metodo Node* createNode(int val)			Modificado de single para doble
+	-Metodo void addNode(List *list, int val)	Modificado de single para doble
+	-Metodo void deleteList(List *list)			NO
+	-Hacer puebas en main.c		
+		-Prueba de crearList					
+		-Prueba de createNode					
+		-Prueba de addNode						
 		-Prueba de deleteList
+	Probado que prev y next son los valores que deben ser

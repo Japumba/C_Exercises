@@ -13,11 +13,12 @@ int main()
 	addNode(list,4);
     addNode(list,2);
 	addNode(list,3);
-	addNode(list,4);
+	addNode(list,9);
+
 	printf("list's count is: %i\n",list->count);
 	printList(list);
+    delList(list);
+    printList(list);
 
-
-	//deleteList(list);
 	return 0;
 }

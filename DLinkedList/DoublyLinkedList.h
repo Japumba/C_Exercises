@@ -21,7 +21,7 @@ Node *createNode(int value);
 DoublyList *createDoublyList();
 void addNode(DoublyList *list, int value);
 void printList(DoublyList *list);
-
+void delList(DoublyList *list);
 DoublyList *createDoublyList()
 {
 	DoublyList *newList;
@@ -37,7 +37,7 @@ Node *createNode(int value)
 	Node *newNode = (Node *)malloc(sizeof(Node));
 	newNode->value = value;
 	newNode->next = NULL;
-	newNode->prev = newNode;
+	newNode->prev = NULL;
 	printf("New node created on doubly list with value: %i.",value);
 	return newNode;
 }
@@ -70,6 +70,24 @@ void addNode(DoublyList *list, int value)
 	list->count++;
 	printf("Node %i inserted at the end of Doubly list.\n", temp);
     printf("previous node is: %i \n",temp->prev  );
+}
+
+void delList(DoublyList *list)
+{
+	if(list == NULL)
+		return;
+	Node *temp = list->head;
+	Node *temp2 = list->head;
+	while(temp != NULL)
+	{
+	    printf("Borrando: %i \n",temp->value);
+		temp2 = temp;
+		temp = temp->next;
+		temp2->next = NULL;
+		temp2->prev = NULL;
+		temp2->value = 0;
+		free(temp2);
+	}
 }
 
 void printList(DoublyList *list)
