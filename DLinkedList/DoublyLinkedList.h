@@ -5,9 +5,10 @@
 
 typedef struct NODE
 {
+    struct NODE *prev;
 	int value;
 	struct NODE *next;
-	struct NODE *prev;
+
 }Node;
 
 typedef struct DOUBLY_LIST
@@ -20,7 +21,6 @@ Node *createNode(int value);
 DoublyList *createDoublyList();
 void addNode(DoublyList *list, int value);
 void printList(DoublyList *list);
-int isFirst(DoublyList *list);
 
 DoublyList *createDoublyList()
 {
@@ -33,19 +33,13 @@ DoublyList *createDoublyList()
 
 Node *createNode(int value)
 {
+
 	Node *newNode = (Node *)malloc(sizeof(Node));
 	newNode->value = value;
 	newNode->next = NULL;
 	newNode->prev = newNode;
 	printf("New node created on doubly list with value: %i.",value);
 	return newNode;
-}
-int isFirst(DoublyList *list)
-{
-    if(list= NULL)
-    return 1;
-    else
-    return 0;
 }
 
 void addNode(DoublyList *list, int value)
@@ -66,10 +60,16 @@ void addNode(DoublyList *list, int value)
 
 	Node *temp = list->head;
 	while(temp->next != NULL)
+	{
 		temp = temp->next;
+
+    }
+
+    newNode->prev = temp;
 	temp->next = newNode;
 	list->count++;
-	printf("Node inserted at the end of Doubly list.\n");
+	printf("Node %i inserted at the end of Doubly list.\n", temp);
+    printf("previous node is: %i \n",temp->prev  );
 }
 
 void printList(DoublyList *list)
@@ -79,7 +79,9 @@ void printList(DoublyList *list)
 	Node *temp = list->head;
 	while(temp != NULL)
 	{
-		printf("[%i]\n",temp->value);
+	    printf(" [%i] ",temp->prev);
+	    printf(" [%i] ",temp->value);
+		printf(" [%i] \n",temp->next);
 		temp = temp->next;
 	}
 }
